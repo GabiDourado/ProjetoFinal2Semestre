@@ -84,7 +84,6 @@ namespace ProjetoFinal2Semestre.Controllers
             }
             return View(usuario);
         }
-
         // GET: Usuario/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
