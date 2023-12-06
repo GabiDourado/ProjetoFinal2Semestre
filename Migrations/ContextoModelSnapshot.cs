@@ -243,14 +243,14 @@ namespace ProjetoFinal2Semestre.Migrations
                     b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DataEntrada")
+                    b.Property<DateTime>("DataSaida")
                         .HasColumnType("datetime2")
                         .HasColumnName("DataSaida");
 
                     b.Property<int>("ProdutoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("QuantidadeDeEntrada")
+                    b.Property<int>("QuantidadeDeSaida")
                         .HasColumnType("int")
                         .HasColumnName("QuantidadeDeSaida");
 

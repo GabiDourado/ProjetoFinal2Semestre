@@ -17,11 +17,11 @@ namespace ProjetoFinal2Semestre.Models
 
         [Column("QuantidadeDeSaida")]
         [Display(Name = "Quantidade")]
-        public int QuantidadeDeEntrada { get; set; }
+        public int QuantidadeDeSaida { get; set; }
 
         [Column("DataSaida")]
         [Display(Name = "Data de Saída")]
-        public DateTime DataEntrada { get; set; }
+        public DateTime DataSaida { get; set; }
 
         [ForeignKey("UsuarioId")]
         [Display(Name = "Usuário")]

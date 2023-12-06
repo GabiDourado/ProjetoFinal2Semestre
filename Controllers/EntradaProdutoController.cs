@@ -60,11 +60,14 @@ namespace ProjetoFinal2Semestre.Controllers
         {
             if (ModelState.IsValid)
             {
+                var produto = await _context.Produto.Where(p => p.Id == entradaProduto.ProdutoId).FirstOrDefaultAsync();
+                produto.ProdutoEstoque = produto.ProdutoEstoque + entradaProduto.QuantidadeDeEntrada;
+                _context.Update(produto);
                 _context.Add(entradaProduto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "ProdutoNome", entradaProduto.ProdutoId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "ProdutoNome", entradaProduto.Id);
             return View(entradaProduto);
         }
 

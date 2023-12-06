@@ -12,7 +12,7 @@ using ProjetoFinal2Semestre.Models;
 namespace ProjetoFinal2Semestre.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20231206115459_Criacao-Inicial")]
+    [Migration("20231206123104_Criacao-Inicial")]
     partial class CriacaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -245,14 +245,14 @@ namespace ProjetoFinal2Semestre.Migrations
                     b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DataEntrada")
+                    b.Property<DateTime>("DataSaida")
                         .HasColumnType("datetime2")
                         .HasColumnName("DataSaida");
 
                     b.Property<int>("ProdutoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("QuantidadeDeEntrada")
+                    b.Property<int>("QuantidadeDeSaida")
                         .HasColumnType("int")
                         .HasColumnName("QuantidadeDeSaida");
 

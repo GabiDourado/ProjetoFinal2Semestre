@@ -62,18 +62,21 @@ namespace ProjetoFinal2Semestre.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProdutoId,QuantidadeDeEntrada,DataEntrada,UsuarioId,ClienteId,TipoSaidaId")] SaidaProduto saidaProduto)
+        public async Task<IActionResult> Create([Bind("Id,ProdutoId,QuantidadeDeSaida,DataSaida,UsuarioId,ClienteId,TipoSaidaId")] SaidaProduto saidaProduto)
         {
             if (ModelState.IsValid)
             {
+                var produto = await _context.Produto.Where(p => p.Id == saidaProduto.ProdutoId).FirstOrDefaultAsync();
+                produto.ProdutoEstoque = produto.ProdutoEstoque - saidaProduto.QuantidadeDeSaida;
+                _context.Update(produto);
                 _context.Add(saidaProduto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ClienteId"] = new SelectList(_context.Cliente, "Id", "ClienteNome", saidaProduto.ClienteId);
             ViewData["ProdutoId"] = new SelectList(_context.Produto, "Id", "ProdutoNome", saidaProduto.ProdutoId);
-            ViewData["TipoSaidaId"] = new SelectList(_context.TipoSaida, "Id", "TipoDeSaida", saidaProduto.TipoSaidaId);
-            ViewData["UsuarioId"] = new SelectList(_context.Usuario, "Id", "UsuarioNome", saidaProduto.UsuarioId);
+            ViewData["TipoSaidaId"] = new SelectList(_context.Produto, "Id", "TipoDeSaida", saidaProduto.TipoSaidaId);
+            ViewData["UsuarioId"] = new SelectList(_context.Produto, "Id", "UsuarioNome", saidaProduto.UsuarioId);
             return View(saidaProduto);
         }
 
@@ -102,7 +105,7 @@ namespace ProjetoFinal2Semestre.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ProdutoId,QuantidadeDeEntrada,DataEntrada,UsuarioId,ClienteId,TipoSaidaId")] SaidaProduto saidaProduto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProdutoId,QuantidadeDeSaida,DataSaida,UsuarioId,ClienteId,TipoSaidaId")] SaidaProduto saidaProduto)
         {
             if (id != saidaProduto.Id)
             {
