@@ -1,5 +1,5 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -14,5 +14,71 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: 'Itim', cursive;
+    background: rgba(242, 213, 68, 0.60);
+}
+footer {
+    background-color: #F2D544;
+}
+.container-fluid a{
+    width: 3.5%;
+    height: 2%;
+    padding:0;
+}
+.container-fluid a img {
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-flow: row;
+    list-style-type: none;
+    align-items: center;
+    background-color: #F2D544;
+}
+.menu{
+    padding: 1.3rem;
+    margin-top: 0.5rem;
+}
+.menu .Item{
+    padding-left:1.5rem;
+}
+.Item1 {
+    padding-left: 0.5rem;
+}
+.menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+.rodape{
+    margin-left: 1rem;
+}
+header {
+    background-color: #F2D544;
+}
+nav {
+    background-color: #F2D544;
+}
+.navbar-collapse {
+    display: flex;
+    background-color: #F2D544;
+    align-items: center;
+    margin-bottom: 0rem !important;
+}
+.container-fluid{
+    display: flex !important;
+    align-items: center;
+}
+td{
+    border-color: black;
+}
+td a {
+    color: #F23005;
+    text-decoration: none;
+}
+p a {
+    color: #F23005;
+    text-decoration: blink;
 }

@@ -27,7 +27,7 @@ namespace ProjetoFinal2Semestre.Controllers
                 var verificaLogin = _context.Usuario.Where(x => x.UsuarioEmail == usuario.UsuarioEmail && x.UsuarioSenha == usuario.UsuarioSenha).FirstOrDefault();
                 if (verificaLogin == null)
                 {
-                    ViewBag.Mensagem = "Usuário ou Senha não existe";
+                    ViewBag.Mensagem = "Usuário ou Senha Incorretos. Tente novamente!";
                     return View();
                 }
                 else
