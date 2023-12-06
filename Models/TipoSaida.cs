@@ -7,11 +7,11 @@ namespace ProjetoFinal2Semestre.Models
     [Table("TipoSaida")]
     public class TipoSaida
     {
-        [Column("TipoSaidaId")]
+        [Column("Id")]
         public int Id { get; set; }
 
         [Column("TipoSaida")]
         [Display(Name = "Tipo de Saída")]
-        public string TipoSaida { get; set; } = string.Empty;
+        public string TipoDeSaida { get; set; } = string.Empty;
     }
 }

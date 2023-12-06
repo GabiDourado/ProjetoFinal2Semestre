@@ -7,7 +7,7 @@ namespace ProjetoFinal2Semestre.Models
     [Table("TipoProduto")]
     public class TipoProduto
     {
-        [Column("TipoProdutoId")]
+        [Column("Id")]
         public int Id { get; set; }
 
         [Column("TipoProdutoNome")]

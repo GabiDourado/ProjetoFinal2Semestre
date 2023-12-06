@@ -7,7 +7,7 @@ namespace ProjetoFinal2Semestre.Models
     [Table("SaidaProduto")]
     public class SaidaProduto
     {
-        [Column("SaidaProdutoId")]
+        [Column("Id")]
         public int Id { get; set; }
 
         [ForeignKey("ProdutoId")]
@@ -22,5 +22,20 @@ namespace ProjetoFinal2Semestre.Models
         [Column("DataSaida")]
         [Display(Name = "Data de Saída")]
         public DateTime DataEntrada { get; set; }
+
+        [ForeignKey("UsuarioId")]
+        [Display(Name = "Usuário")]
+        public int UsuarioId { get; set; }
+        public Usuario? Usuario { get; set; }
+
+        [ForeignKey("ClienteId")]
+        [Display(Name = "Cliente")]
+        public int ClienteId { get; set; }
+        public Cliente? Cliente { get; set; }
+
+        [ForeignKey("TipoSaidaId")]
+        [Display(Name = "Tipo de saída")]
+        public int TipoSaidaId { get; set; }
+        public TipoSaida? TipoSaida { get; set; }
     }
 }

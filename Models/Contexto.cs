@@ -15,7 +15,7 @@ namespace ProjetoFinal2Semestre.Models
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Fornecedor> Fornecedor { get; set; }
         public DbSet<EntradaProduto> EntradaProduto { get; set; }
-        //public DbSet<SaidaProduto> SaidaProduto { get; set; }
+        public DbSet<SaidaProduto> SaidaProduto { get; set; }
         public DbSet<TipoSaida> TipoSaida { get; set; }
         public DbSet<Cidade> Cidade { get; set; }
         public DbSet<Estado> Estado { get; set; }

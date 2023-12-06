@@ -7,7 +7,7 @@ namespace ProjetoFinal2Semestre.Models
     [Table("Estado")]
     public class Estado
     {
-        [Column("EstadoId")]
+        [Column("Id")]
         public int Id { get; set; }
 
         [Column("EstadoNome")]

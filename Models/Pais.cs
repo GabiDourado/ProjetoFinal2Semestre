@@ -6,7 +6,7 @@ namespace ProjetoFinal2Semestre.Models
     [Table("Pais")]
     public class Pais
     {
-        [Column("PaisId")]
+        [Column("Id")]
         public int Id { get; set; }
 
         [Column("PaisNome")]

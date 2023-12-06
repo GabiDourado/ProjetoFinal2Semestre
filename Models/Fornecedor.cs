@@ -7,7 +7,7 @@ namespace ProjetoFinal2Semestre.Models
     [Table("Fornecedor")]
     public class Fornecedor
     {
-        [Column("FornecedorId")]
+        [Column("Id")]
         public int Id { get; set; }
 
         [Column("FornecedorNome")]
