@@ -12,7 +12,7 @@ namespace ProjetoFinal2Semestre.Models
 
         [Column("CidadeNome")]
         [Display(Name = "Nome do Cidade")]
-        public string EstadoNome { get; set; } = string.Empty;
+        public string CidadeNome { get; set; } = string.Empty;
 
         [ForeignKey("EstadoId")]
         [Display(Name = "Estado")]
